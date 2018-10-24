@@ -239,6 +239,15 @@ balance between cost (i.e. resources spent on Snowpipe queue management and the 
     FROM TABLE(information_schema.copy_history(table_name=>'MYTABLE', start_time=> dateadd(hours, -1, current_timestamp())))
     ```
     
+    Shows the LOAD History on last 1 hour 
+    ```mysql-psql
+    SELECT *
+    FROM table(demo.information_schema.copy_history(table_name=>'RAW_DATA', start_time=> dateadd(hours, -1, current_timestamp())));
+    
+    SELECT *
+    FROM table(demo.information_schema.copy_history(table_name=>'TSV_DATA', start_time=> dateadd(hours, -1, current_timestamp())));
+    ```
+    
     OR
     
     ```mysql-psql
@@ -256,10 +265,12 @@ balance between cost (i.e. resources spent on Snowpipe queue management and the 
 
 13. Clean up the stuff that have been built.
     
+    From Snowflake:
     ```mysql-psql
     -- This will delete everything (tables, stages, pipes under this schema as well as the schema.
     DROP SCHEMA snowpipe_demo;
     ```
+    Additionally, you can delete the bucket using AWS Console.
 
 ## Additional Information
 

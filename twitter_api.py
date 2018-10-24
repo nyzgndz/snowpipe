@@ -38,8 +38,8 @@ AUTH.set_access_token(CREDENTIALS['access_token'],
                       CREDENTIALS['access_token_secret'])
 TWEEPY_API = tweepy.API(AUTH)
 
-TWITTER_USER_NAME = "VRmatkalla"  # VR GROUP
-# TWITTER_USER_NAME = "KleemolaAntti"  # CDO @ VR GROUP
+# TWITTER_USER_NAME = "VRmatkalla"  # VR GROUP
+TWITTER_USER_NAME = "KleemolaAntti"  # CDO @ VR GROUP
 # TWITTER_USER_NAME = "niinisto"  # President of Finland
 
 JSON_OUTPUT_FILENAME = TODAY_UTC_STR + TWITTER_USER_NAME + ".json"
